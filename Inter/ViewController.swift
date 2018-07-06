@@ -12,14 +12,18 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var goButton: UIButton!
     
+    var screen_height = UIScreen.main.bounds.size.height
+    var screen_width = UIScreen.main.bounds.size.width
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         goButton.translatesAutoresizingMaskIntoConstraints = false
+        
         goButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         goButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        goButton.heightAnchor.constraint(equalToConstant: 105).isActive = true
-        goButton.widthAnchor.constraint(equalToConstant: 105).isActive = true
+        goButton.heightAnchor.constraint(equalToConstant: screen_height/5.5).isActive = true
+        goButton.widthAnchor.constraint(equalTo: goButton.heightAnchor).isActive = true
         
         goButton.layer.cornerRadius = goButton.frame.height/2
         

@@ -11,7 +11,11 @@ import UIKit
 class InputHViewController: UIViewController {
     
     var displayT: String!
+    
+    var screen_height = UIScreen.main.bounds.size.height
+    var screen_width = UIScreen.main.bounds.size.width
 
+    @IBOutlet weak var corr_y_label: UILabel!
     @IBOutlet weak var dispT: UILabel!
     
     override func viewDidLoad() {
@@ -28,6 +32,20 @@ class InputHViewController: UIViewController {
     
     func display(){
         dispT.text = displayT
+        
+        corr_y_label.translatesAutoresizingMaskIntoConstraints = false
+        dispT.translatesAutoresizingMaskIntoConstraints = false
+        
+        corr_y_label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        corr_y_label.topAnchor.constraint(equalTo: self.view.topAnchor, constant: screen_height/2.5).isActive = true
+        corr_y_label.widthAnchor.constraint(equalToConstant: screen_width/2).isActive = true
+        corr_y_label.heightAnchor.constraint(equalTo: corr_y_label.widthAnchor, multiplier: 1/6).isActive = true
+        
+        dispT.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        dispT.topAnchor.constraint(equalTo: corr_y_label.bottomAnchor, constant: screen_height/15).isActive = true
+        dispT.widthAnchor.constraint(equalToConstant: screen_width/2).isActive = true
+        dispT.heightAnchor.constraint(equalTo: corr_y_label.heightAnchor).isActive = true
+        
     }
         
 

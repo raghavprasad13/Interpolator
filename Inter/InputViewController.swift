@@ -13,6 +13,9 @@ class InputViewController: UIViewController {
     var slope = 0.0, yIntercept = 0.0
     var inputIsTemperature = true
     
+    var screen_width = UIScreen.main.bounds.size.width
+    var screen_height = UIScreen.main.bounds.size.height
+    
     @IBOutlet weak var calculateButton: UIButton!
     
     @IBOutlet weak var T1: UITextField!
@@ -21,13 +24,22 @@ class InputViewController: UIViewController {
     @IBOutlet weak var H2: UITextField!
     @IBOutlet weak var newVal: UITextField!
     
+    @IBOutlet weak var y_values_label: UILabel!
+    @IBOutlet weak var x_values_label: UILabel!
+    
+    @IBOutlet weak var toggle: UISegmentedControl!
+    
     @IBAction func junk(_ sender: UIButton) {
         _ = check()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(screen_width)
+        print(screen_height)
         delegate()
+        setup_views()
+        restoreDefaults()
         // Do any additional setup after loading the view.
     }
     
@@ -80,13 +92,75 @@ class InputViewController: UIViewController {
     }
     
     
-    func delegate(){
+    func setup_views() {
+        
+        y_values_label.translatesAutoresizingMaskIntoConstraints = false
+        x_values_label.translatesAutoresizingMaskIntoConstraints = false
+        toggle.translatesAutoresizingMaskIntoConstraints = false
+        T1.translatesAutoresizingMaskIntoConstraints = false
+        T2.translatesAutoresizingMaskIntoConstraints = false
+        H1.translatesAutoresizingMaskIntoConstraints = false
+        H2.translatesAutoresizingMaskIntoConstraints = false
+        newVal.translatesAutoresizingMaskIntoConstraints = false
+        calculateButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        y_values_label.centerXAnchor.constraint(equalTo: self.view.leftAnchor, constant: screen_width/4).isActive = true
+        y_values_label.centerYAnchor.constraint(equalTo: self.view.topAnchor, constant: screen_height/3).isActive = true
+//        y_values_label.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
+//        y_values_label.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: screen_width/6).isActive = true
+        y_values_label.widthAnchor.constraint(equalToConstant: screen_width/4).isActive = true
+        y_values_label.heightAnchor.constraint(equalToConstant: screen_height/23).isActive = true
+        
+        x_values_label.centerXAnchor.constraint(equalTo: self.view.rightAnchor, constant: (-1*screen_width)/4).isActive = true
+        x_values_label.centerYAnchor.constraint(equalTo: self.view.topAnchor, constant: screen_height/3).isActive = true
+        x_values_label.widthAnchor.constraint(equalToConstant: screen_width/4).isActive = true
+        x_values_label.heightAnchor.constraint(equalToConstant: screen_height/23).isActive = true
+        
+        toggle.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: screen_width/12).isActive = true
+        toggle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: screen_height/5).isActive = true
+        toggle.widthAnchor.constraint(equalToConstant: screen_width/4).isActive = true
+        toggle.heightAnchor.constraint(equalTo: toggle.widthAnchor, multiplier: 7/25).isActive = true
+        
+        T1.centerXAnchor.constraint(equalTo: y_values_label.centerXAnchor).isActive = true
+//        T1.leftAnchor.constraint(equalTo: y_values_label.leftAnchor, constant: (-1*screen_width)/10).isActive = true
+//        T1.rightAnchor.constraint(equalTo: y_values_label.rightAnchor, constant: screen_width/10).isActive = true
+        T1.topAnchor.constraint(equalTo: y_values_label.bottomAnchor, constant: screen_height/14).isActive = true
+        T1.widthAnchor.constraint(equalToConstant: screen_width/3).isActive = true
+        T1.heightAnchor.constraint(equalTo: T1.widthAnchor, multiplier: 9/25).isActive = true
+        
+        H1.centerXAnchor.constraint(equalTo: x_values_label.centerXAnchor).isActive = true
+        H1.topAnchor.constraint(equalTo: x_values_label.bottomAnchor, constant: screen_height/14).isActive = true
+        H1.widthAnchor.constraint(equalToConstant: screen_width/3).isActive = true
+        H1.heightAnchor.constraint(equalTo: H1.widthAnchor, multiplier: 9/25).isActive = true
+        
+        T2.centerXAnchor.constraint(equalTo: T1.centerXAnchor).isActive = true
+        T2.topAnchor.constraint(equalTo: T1.bottomAnchor, constant: screen_height/14).isActive = true
+        T2.widthAnchor.constraint(equalTo: T1.widthAnchor).isActive = true
+        T2.heightAnchor.constraint(equalTo: T1.heightAnchor).isActive = true
+        
+        H2.centerXAnchor.constraint(equalTo: H1.centerXAnchor).isActive = true
+        H2.topAnchor.constraint(equalTo: H1.bottomAnchor, constant: screen_height/14).isActive = true
+        H2.widthAnchor.constraint(equalTo: H1.widthAnchor).isActive = true
+        H2.heightAnchor.constraint(equalTo: H1.heightAnchor).isActive = true
+        
+        newVal.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        newVal.topAnchor.constraint(equalTo: T2.bottomAnchor, constant: screen_height/14).isActive = true
+        newVal.widthAnchor.constraint(equalTo: T1.widthAnchor).isActive = true
+        newVal.heightAnchor.constraint(equalTo: T1.heightAnchor).isActive = true
+        
+        calculateButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        calculateButton.topAnchor.constraint(equalTo: newVal.bottomAnchor, constant: screen_height/12).isActive = true
+        calculateButton.widthAnchor.constraint(equalTo: newVal.widthAnchor).isActive = true
+        calculateButton.heightAnchor.constraint(equalTo: newVal.heightAnchor).isActive = true
+        calculateButton.layer.cornerRadius = calculateButton.frame.height/2
+        
+    }
+    
+    func delegate() {
         T1.delegate = self
         T2.delegate = self
         H1.delegate = self
         H2.delegate = self
-                
-        calculateButton.layer.cornerRadius = calculateButton.frame.height/2
     }
     
     func generateLine(x1: Double, y1: Double, x2: Double, y2: Double){

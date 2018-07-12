@@ -29,18 +29,38 @@
                                     <segue destination="bg8-3f-j2f" kind="show" id="Mj4-OU-CqC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyu-J0-b6T">
+                                <rect key="frame" x="270" y="522" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="OBc-Rw-79I" kind="show" id="hc4-rK-cpS"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madebymac" translatesAutoresizingMaskIntoConstraints="NO" id="3uP-h7-Vzo">
+                                <rect key="frame" x="74" y="513" width="173" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ESm-sY-rqR"/>
+                                    <constraint firstAttribute="width" constant="173" id="mbX-X4-JKE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3uP-h7-Vzo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Go3-BU-WBv"/>
+                            <constraint firstItem="3uP-h7-Vzo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQy-I2-yjw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="evc-qX-UCu"/>
                     <connections>
                         <outlet property="goButton" destination="cPZ-jA-wSN" id="aYv-mB-m7d"/>
+                        <outlet property="infoButton" destination="iyu-J0-b6T" id="RQZ-2Q-no5"/>
+                        <outlet property="madeByMACLogo" destination="3uP-h7-Vzo" id="d1E-XO-cjy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="376.80000000000001" y="38.23088455772114"/>
+            <point key="canvasLocation" x="375" y="38.028169014084504"/>
         </scene>
         <!--InputViewController-->
         <scene sceneID="2hG-Gm-TSx">
@@ -179,6 +199,88 @@
             </objects>
             <point key="canvasLocation" x="2501.25" y="36.971830985915496"/>
         </scene>
+        <!--Info View Controller-->
+        <scene sceneID="w3I-QF-C8a">
+            <objects>
+                <viewController id="OBc-Rw-79I" customClass="InfoViewController" customModule="Inter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pln-bR-iEL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="maclogopng" translatesAutoresizingMaskIntoConstraints="NO" id="l3E-5q-xCw">
+                                <rect key="frame" x="55" y="52" width="210" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cP-Hv-Goz">
+                                <rect key="frame" x="0.0" y="271" width="188" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Interpolator">
+                                        <attributes>
+                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="31" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USZ-Up-9ja">
+                                <rect key="frame" x="16" y="316" width="288" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">This app, developed by the Mobile Applications Club, is a simple yet useful interpolator which users will find very handy in various scientific calculations. The toggle control allows you to select either of the two variables you wish to find.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VE-mQ-9yC">
+                                <rect key="frame" x="137" y="490" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="githubIcon"/>
+                                <connections>
+                                    <action selector="githubButtonClick:" destination="OBc-Rw-79I" eventType="touchUpInside" id="aV8-hx-FJI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOX-uc-bE5">
+                                <rect key="frame" x="219" y="490" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="MAC logo"/>
+                                <connections>
+                                    <action selector="MACButtonClick:" destination="OBc-Rw-79I" eventType="touchUpInside" id="Sqx-OS-wOG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjq-hE-eGi">
+                                <rect key="frame" x="55" y="490" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="fbIcon"/>
+                                <connections>
+                                    <action selector="fbButton:" destination="OBc-Rw-79I" eventType="touchUpInside" id="eD4-xf-Zdl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="40H-yq-ntE"/>
+                    </view>
+                    <connections>
+                        <outlet property="MACButton" destination="FOX-uc-bE5" id="UKJ-mL-C5U"/>
+                        <outlet property="articleBody" destination="USZ-Up-9ja" id="cmu-o7-xNI"/>
+                        <outlet property="articleTitle" destination="2cP-Hv-Goz" id="svP-Oe-Xjy"/>
+                        <outlet property="fbButton" destination="qjq-hE-eGi" id="NwK-zi-UwQ"/>
+                        <outlet property="githubButton" destination="6VE-mQ-9yC" id="xmB-rV-EiZ"/>
+                        <outlet property="logo" destination="l3E-5q-xCw" id="n8q-om-1tq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GE0-EU-5d7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="819.71830985915494"/>
+        </scene>
         <!--InputHViewController-->
         <scene sceneID="vcx-F7-DKk">
             <objects>
@@ -242,4 +344,11 @@
             <point key="canvasLocation" x="-482" y="38"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MAC logo" width="1500" height="1500"/>
+        <image name="fbIcon" width="2000" height="2000"/>
+        <image name="githubIcon" width="512" height="512"/>
+        <image name="maclogopng" width="256" height="256"/>
+        <image name="madebymac" width="256" height="256"/>
+    </resources>
 </document>

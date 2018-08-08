@@ -16,8 +16,6 @@
 		28D51E8E1F779F4F00BA8361 /* InterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D51E8D1F779F4F00BA8361 /* InterTests.swift */; };
 		28D51E991F779F4F00BA8361 /* InterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D51E981F779F4F00BA8361 /* InterUITests.swift */; };
 		28D51EA71F77A12E00BA8361 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D51EA61F77A12E00BA8361 /* InputViewController.swift */; };
-		28D51EA91F77B1CE00BA8361 /* InputTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D51EA81F77B1CE00BA8361 /* InputTViewController.swift */; };
-		28D51EAB1F77B42B00BA8361 /* InputHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D51EAA1F77B42B00BA8361 /* InputHViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +51,6 @@
 		28D51E981F779F4F00BA8361 /* InterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterUITests.swift; sourceTree = "<group>"; };
 		28D51E9A1F779F4F00BA8361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28D51EA61F77A12E00BA8361 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
-		28D51EA81F77B1CE00BA8361 /* InputTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTViewController.swift; sourceTree = "<group>"; };
-		28D51EAA1F77B42B00BA8361 /* InputHViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +104,6 @@
 				28D51E781F779F4F00BA8361 /* AppDelegate.swift */,
 				28D51E7A1F779F4F00BA8361 /* ViewController.swift */,
 				28D51E7C1F779F4F00BA8361 /* Main.storyboard */,
-				28D51EAA1F77B42B00BA8361 /* InputHViewController.swift */,
-				28D51EA81F77B1CE00BA8361 /* InputTViewController.swift */,
 				2876777920F66E5B00729B37 /* InfoViewController.swift */,
 				28D51EA61F77A12E00BA8361 /* InputViewController.swift */,
 				28D51E7F1F779F4F00BA8361 /* Assets.xcassets */,
@@ -268,9 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28D51EA91F77B1CE00BA8361 /* InputTViewController.swift in Sources */,
 				28D51EA71F77A12E00BA8361 /* InputViewController.swift in Sources */,
-				28D51EAB1F77B42B00BA8361 /* InputHViewController.swift in Sources */,
 				28D51E7B1F779F4F00BA8361 /* ViewController.swift in Sources */,
 				2876777A20F66E5B00729B37 /* InfoViewController.swift in Sources */,
 				28D51E791F779F4F00BA8361 /* AppDelegate.swift in Sources */,

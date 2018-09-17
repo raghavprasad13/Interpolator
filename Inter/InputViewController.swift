@@ -37,8 +37,8 @@ class InputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(screen_width)
-        print(screen_height)
+//        print(screen_width)
+//        print(screen_height)
         delegate()
         setup_views()
         restoreDefaults()
